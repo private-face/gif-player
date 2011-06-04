@@ -1,0 +1,102 @@
+.gif-player {
+	border: solid #000;
+	border-width: 1px 2px 2px 1px;
+	padding: 1px;
+	overflow: hidden;
+}
+
+	.gif-player img {
+		display: block;
+		margin: 0 auto;
+	    border: 0;
+	}
+
+
+.gif-player .gp-controls {
+	background: rgba(0,0,0,0.8);
+
+	width: 100%;
+	height: 40px;
+
+	position: absolute;
+	left: 0;
+	bottom: -40px;
+	z-index: 100;
+}
+
+.gif-player:hover .gp-controls {
+	bottom: 0;
+}
+
+.gif-player .gp-play,
+.gif-player .gp-fullscreen {
+	position: absolute;
+	bottom: 8px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(../images/controls.png) no-repeat;
+}
+
+	.gif-player .gp-play {
+		left: 10px;
+	}
+
+		.gif-player .gp-play:hover {
+			background-position: -24px 0;
+		}
+
+	.gif-player .gp-fullscreen {
+		background-position: 0 -48px;	
+		right: 10px;
+	}
+
+		.gif-player .gp-fullscreen:hover {
+			background-position: -24px -48px;	
+		}
+
+
+	.gp-playing .gp-play {
+		background-position: 0 -24px;
+	}
+
+		.gp-playing .gp-play:hover {
+			background-position: -24px -24px;
+		}
+
+	.gp-loading .gp-play,
+	.gp-loading .gp-play:hover {
+		background: url(../images/black.gif) no-repeat 50% 50%;
+	}
+
+
+	.gp-full .gp-fullscreen {
+		background-position: 0 -72px;
+	}
+
+		.gp-full .gp-fullscreen:hover {
+			background-position: -24px -72px;
+		}	
+		
+/* FULLSCREEN */
+
+.gp-full {
+	position: fixed!important;
+	left: 0!important;
+	top: 0!important;
+	background: #000;
+	border: 0!important;
+	height: 100%!important;
+	width: 100%!important;
+	z-index: 10000;
+}
+
+	.gp-horizontal img {
+		width: 100%!important;
+		height: auto!important;
+	}
+
+	.gp-vertical img {
+		height: 100%!important;
+		width: auto!important;
+	}
