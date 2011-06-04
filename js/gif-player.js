@@ -250,8 +250,10 @@
 	};
 	
 	GifPlayer.prototype.__recalculateRatio = function() {
-		var aspectRatio = (window.innerWidth * this._movie.height) / (window.innerHeight * this._movie.width);
-	
+		var wWidth = window.innerWidth || document.documentElement.clientWidth;
+		var wHeight = window.innerHeight || document.documentElement.clientHeight;
+		var aspectRatio = (wWidth * this._movie.height) / (wHeight * this._movie.width);
+
 		if (aspectRatio < 1) {
 			// horizontal
 			this._movie.state('horizontal', true);
