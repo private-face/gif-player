@@ -10,8 +10,14 @@
 </style>
 </head>
 <body>
-	<a href="movie.gif" target="_blank" class="gif-player" title="Click to view full version, 5MB">
-		<img src="preview.png" alt="" width="320" height="240">
+	<a href="movie.gif" class="gif-player">
+		<img src="preview.png" alt="" width="400" height="225">
 	</a>
+	
+	<script>
+		$(function() {
+			$('.gif-player').gifPlayer();
+		});
+	</script>
 </body>
 </html>

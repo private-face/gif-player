@@ -311,8 +311,3 @@
 	};
 
 })();
-
-// good for throat, blood will flow
-$(function() {
-	$('.gif-player').gifPlayer();
-});
