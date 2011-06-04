@@ -138,7 +138,9 @@
 	};
 	
 	GifPlayer.prototype.__getMovieUrl = function() {
-		if (typeof this._options.url !== 'string' || $.trim('this._options.url') === '') {
+		if (typeof this._options.url === 'string' && $.trim(this._options.url) !== '') {
+			return this._options.url;
+		} else {
 			var attrlist = ['href', 'src', 'rel', 'alt'];
 	
 			while (attrlist.length) {
@@ -147,8 +149,8 @@
 					return url;
 				}
 			}
+
 		}
-	
 		throw "Unable to initailize player: can't get URL (tried to retrieve it from '" + attrlist.join("', '") + "' attributes).";
 	};
 	
@@ -159,7 +161,7 @@
 			return $preview;
 		}
 		
-		throw "Unable to initailize player: cant't find preview image.";
+		throw "Unable to initailize player: can't find preview image.";
 	};
 	
 	GifPlayer.prototype.__GifPlayerInit = function($el, options) {
@@ -180,7 +182,6 @@
 			})
 			.append(this._options.controlsTemplate);
 		
-		// create event listeners
 		this.__createEventListeners();
 	};
 	
