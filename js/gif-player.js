@@ -195,8 +195,9 @@
 		});
 		
 		this._movie.onStateChange = function(key, value) {
-			
-			self._$element[value ? 'addClass' : 'removeClass'](self._options[key + 'Class']);
+			if (self._options[key + 'Class']) {
+				self._$element[value ? 'addClass' : 'removeClass'](self._options[key + 'Class']);
+			}
 			
 			switch (key) {
 				case 'fullscreen':
