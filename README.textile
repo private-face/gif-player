@@ -57,8 +57,8 @@ h3. Classnames reflecting the state of the player
 * @loadingClass {'gp-loading'}@ — Class reflecting the 'loading' state.
 * @playingClass {'gp-playing'}@ — Class reflecting the 'playing' state.
 * @fullscreenClass {'gp-full'}@ — Class reflecting the 'fullscreen' state.
-* @horizontalClass {'gp-horizontal'}@ — This class is set if the animated GIF takes this 100% of screen *width* in fullscreen mode.
-* @verticalClass {'gp-vertical'}@ — This class is set if the animated GIF takes this 100% of screen *height* in fullscreen mode.
+* @horizontalClass {'gp-horizontal'}@ — This class is set if the animated GIF takes 100% of screen *width* in fullscreen mode.
+* @verticalClass {'gp-vertical'}@ — This class is set if the animated GIF takes 100% of screen *height* in fullscreen mode.
 
 h2. Events
 
