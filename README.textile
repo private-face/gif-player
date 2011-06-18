@@ -1,6 +1,6 @@
 h1. Gif Player
 
-*gifPlayer* is a jQuery plugin that implements "player" functionality for animated GIF's. Initially it was developed for http://svalko.org, where it had reduced the outgoing traffic by 70Gb/day.
+*gifPlayer* is a jQuery plugin that implements "player" functionality for animated GIF's. Initially it was developed for "http://svalko.org":http://svalko.org, where it had reduced the outgoing traffic by 70Gb/day.
 
 h2. Features:
 
@@ -26,9 +26,8 @@ images/*
 
 h2. Usage:
 
-<pre><code>
-<a href="*PATH_TO_ANIMATED.GIF*" class="gif-player">
-<img src="*PREVIEW.GIF*" width="320" height="320" />
+<pre><code><a href="PATH_TO_ANIMATED.GIF" class="gif-player">
+<img src="PREVIEW.GIF" width="320" height="320" />
 </a>
 
 <script>
