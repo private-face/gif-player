@@ -1,0 +1,68 @@
+h1. Gif Player
+
+*gifPlayer* is a jQuery plugin that implements "player" functionality for animated GIF's. Initially it was developed for http://svalko.org, where it had reduced the outgoing traffic by 70Gb/day.
+
+h2. Features:
+
+* Loads GIF on demand.
+* Start/Stop buttons.
+* Fullscreen mode.
+* Fully-customizable look. 
+* Ability to control player using special jQuery events.
+
+h2. Requirements
+
+jQuery 1.5 and later
+
+h2. Installation
+
+Download and include the following files into your project:
+
+bq). js/release/jquery.gif-player.js (or js/release/jquery.gif-player.min.js)
+css/gif-player.css
+images/*
+
+h2. Usage:
+
+<pre><code>
+<a href="*PATH_TO_ANIMATED.GIF*" class="gif-player">
+<img src="*PREVIEW.GIF*" width="320" height="320" />
+</a>
+
+<script>
+     $('.gif-player').gifPlayer();
+</script>
+</code></pre>
+
+h2. Plugin parameters:
+
+You can also pass additional parameters to plugin. All parameters are optional, default values are quoted in curly braces.
+
+h3. Common options
+
+* @*url* {null}@ — Path to animated GIF. If omitted, the element's @href@ attribute will be used instead.
+* @*fullscreen* {false}@ — Start player in fullscreen mode.
+* @*preload* {false}@ — Start loading GIF immediately.
+* @*play* {false}@ — Play GIF immediately.
+
+h3. Options for customizing control panel (change them carefully)
+
+* @*controlsTemplate* {'<span class="gp-controls"><span class="gp-play"/><span class="gp-fullscreen"/></span>'}@ — HTML-template of the player's control panel. This HTML-code will be inserted into gif-player's element.
+* @*playControlClass* {'gp-play'}@ — Class name of the 'Play/Stop' button.
+* @*fullscreenControlClass* {'gp-fullscreen'}@ — Class name of the 'toggle fullscreen' button.
+
+h3. Classnames reflecting the state of the player
+
+* @*loadingClass* {'gp-loading'}@ — Class reflecting the 'loading' state.
+* @*playingClass* {'gp-playing'}@ — Class reflecting the 'playing' state.
+* @*fullscreenClass* {'gp-full'}@ — Class reflecting the 'fullscreen' state.
+* @*horizontalClass* {'gp-horizontal'}@ — This class is set if the animated GIF takes this 100% of screen *width* in fullscreen mode.
+* @*verticalClass* {'gp-vertical'}@ — This class is set if the animated GIF takes this 100% of screen *height* in fullscreen mode.
+
+h2. Events
+
+You can also control gif-player by triggering the following events:
+
+* @*playGif*@ — Toggle playing.
+* @*loadGif*@ — Start loading gif.
+* @*fscreenGif*@ — Toggle fullscreen mode.
