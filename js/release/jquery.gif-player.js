@@ -120,11 +120,11 @@
 	};
 
 	GifMovie.prototype.adjustMoviePosition = function() {
-		var pos = this.$preview.position();
+		var preview = this.$preview[0];
 		if (this.$gif) {
 			this.$gif.css({
-				'top': pos.top,
-				'left': pos.left
+				'top': preview.offsetTop,
+				'left': preview.offsetLeft
 			});
 		}
 	
