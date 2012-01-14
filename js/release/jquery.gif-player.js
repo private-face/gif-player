@@ -181,6 +181,22 @@
 	
 		this.__createEventListeners();
 	};
+	
+	GifPlayer.prototype.__requestFullScreen = function() {
+		var request = this._$element[0].requestFullScreen || 
+						this._$element[0].mozRequestFullScreen || 
+						this._$element[0].webkitRequestFullScreen ||
+						$.noop;
+		request.call(this._$element[0]);
+	};
+	
+	GifPlayer.prototype.__cancelFullScreen = function() {
+		var cancel = document.cancelFullScreen || 
+						document.mozCancelFullScreen || 
+						document.webkitCancelFullScreen ||
+						$.noop;
+		cancel.call(document);
+	};
 
 	GifPlayer.prototype.__createEventListeners = function() {
 		var self = this;
@@ -203,13 +219,26 @@
 					if (value) {
 						self.__recalculateRatio();
 					}
+					if (value) {
+						self.__requestFullScreen();
+					} else {
+						self.__cancelFullScreen();
+					}
 					self.__updatePreviewPosition();
 					self._movie.adjustMoviePosition();
 					break;
 			}
 		
 			self._$element.trigger('stateChangeGif', [key, value]);
-		};	
+		};
+		
+		$(document).bind('mozfullscreenchange', function() {
+			if (document.fullScreenElement && document.fullScreenElement === null ||
+				typeof document.mozFullScreen !== 'undefined' && !document.mozFullScreen ||
+				typeof document.webkitIsFullScreen !== 'undefined' && !document.webkitIsFullScreen) {
+					self._movie.state('fullscreen', false);
+			}
+		});
 
 		this._$element.bind('click', function(e) {
 			var $target = $(e.target);
